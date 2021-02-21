@@ -1,0 +1,52 @@
+State,State Code,Region,Division,PADD
+Alaska,AK,West,Pacific,West Coast
+Alabama,AL,South,East South Central,Gulf Coast
+Arkansas,AR,South,West South Central,Gulf Coast
+Arizona,AZ,West,Mountain,West Coast
+California,CA,West,Pacific,West Coast
+Colorado,CO,West,Mountain,Rocky Mountain
+Connecticut,CT,Northeast,New England,East Coast
+District of Columbia,DC,South,South Atlantic,East Coast
+Delaware,DE,South,South Atlantic,East Coast
+Florida,FL,South,South Atlantic,East Coast
+Georgia,GA,South,South Atlantic,East Coast
+Hawaii,HI,West,Pacific,West Coast
+Iowa,IA,Midwest,West North Central,Midwest
+Idaho,ID,West,Mountain,Rocky Mountain
+Illinois,IL,Midwest,East North Central,Midwest
+Indiana,IN,Midwest,East North Central,Midwest
+Kansas,KS,Midwest,West North Central,Midwest
+Kentucky,KY,South,East South Central,Midwest
+Louisiana,LA,South,West South Central,Gulf Coast
+Massachusetts,MA,Northeast,New England,East Coast
+Maryland,MD,South,South Atlantic,East Coast
+Maine,ME,Northeast,New England,East Coast
+Michigan,MI,Midwest,East North Central,Midwest
+Minnesota,MN,Midwest,West North Central,Midwest
+Missouri,MO,Midwest,West North Central,Midwest
+Mississippi,MS,South,East South Central,Gulf Coast
+Montana,MT,West,Mountain,Rocky Mountain
+North Carolina,NC,South,South Atlantic,East Coast
+North Dakota,ND,Midwest,West North Central,Midwest
+Nebraska,NE,Midwest,West North Central,Midwest
+New Hampshire,NH,Northeast,New England,East Coast
+New Jersey,NJ,Northeast,Middle Atlantic,East Coast
+New Mexico,NM,West,Mountain,Gulf Coast
+Nevada,NV,West,Mountain,West Coast
+New York,NY,Northeast,Middle Atlantic,East Coast
+Ohio,OH,Midwest,East North Central,Midwest
+Oklahoma,OK,South,West South Central,Midwest
+Oregon,OR,West,Pacific,West Coast
+Pennsylvania,PA,Northeast,Middle Atlantic,East Coast
+Rhode Island,RI,Northeast,New England,East Coast
+South Carolina,SC,South,South Atlantic,East Coast
+South Dakota,SD,Midwest,West North Central,Midwest
+Tennessee,TN,South,East South Central,Midwest
+Texas,TX,South,West South Central,Gulf Coast
+Utah,UT,West,Mountain,Rocky Mountain
+Virginia,VA,South,South Atlantic,East Coast
+Vermont,VT,Northeast,New England,East Coast
+Washington,WA,West,Pacific,West Coast
+Wisconsin,WI,Midwest,East North Central,Midwest
+West Virginia,WV,South,South Atlantic,East Coast
+Wyoming,WY,West,Mountain,Rocky Mountain
