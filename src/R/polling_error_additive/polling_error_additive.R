@@ -15,6 +15,11 @@ results_2020 <- results %>%
          finalTwoPartyVSDemocratic = dem/(dem + rep) * 100) %>%
   dplyr::select(-year) %>%
   left_join(df %>% distinct(state, State), by = c("state_po" = "state"))
+state_abb <- df %>%
+  pull(state) %>%
+  unique() %>%
+  sort()
+
 states_2020_ordered_lower <- results_2020 %>% filter(!is.na(State)) %>%
   arrange(finalTwoPartyVSDemocratic) %>% pull(State)
 state_abb_full <- results_2020 %>%
@@ -28,10 +33,6 @@ us_regions <- read_csv("data/us_input/polling_error/us census bureau regions and
 ## Model for scales
 m <- file.path("code/stan/obs/input/polling_error", "polling_error_v5_additive.stan")
 mod <- cmdstan_model(m)
-state_abb <- df %>%
-  pull(state) %>%
-  unique() %>%
-  sort()
 
 
 
