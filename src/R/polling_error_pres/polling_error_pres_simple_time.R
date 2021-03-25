@@ -122,11 +122,21 @@ plt <- ggplot(data = pred, aes(x = prev_rep_share, y = q50)) +
   ylim(c(min(state_error$q50),max(state_error$q50)))
 
 
-ggplot(data = draws, aes(x =  prev_rep_share, y = q50)) +
-  geom_point() +
-  facet_grid(year ~ t) +
-  geom_smooth(method = "lm") +
-  theme_light()
+plt <- ggplot(data = pred, aes(x = prev_rep_share, y = q50, fill = t, color = t)) +
+  geom_line(size = 0.7) +
+  geom_point(aes(x = prev_rep_share, y = q50), size = 0.5, data = state_error) +
+  geom_ribbon(aes(ymin = q25, ymax = q75), alpha = 0.2) +
+  geom_hline(aes(yintercept = 0), linetype = 2, size = 0.5) +
+  facet_wrap(year~.) +
+  theme_light() +
+  labs(caption = "Positive polling errors underestimate Republican support
+               Median, 50% interval",
+       x = "Republican vote share in previous election",
+       y = "Polling error (%, favors Democrats)",
+       color = "Weeks out",
+       fill = "Weeks out") +
+  xlim(c(min(state_error$prev_rep_share),max(state_error$prev_rep_share))) +
+  ylim(c(min(state_error$q50),max(state_error$q50)))
 
 
 
