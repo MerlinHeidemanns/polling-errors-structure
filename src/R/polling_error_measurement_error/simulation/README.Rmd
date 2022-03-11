@@ -1,0 +1,16 @@
+---
+title: "README"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Alpha can be recovered when there is no polling error.
+
+When there is polling error and polling error is random alpha can be recovered with more data (which makes sense as the polling error washes out)
+
+Can one get both?
+
+partial pooling on error terms fixes it

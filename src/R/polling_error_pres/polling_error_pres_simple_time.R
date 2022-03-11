@@ -106,6 +106,7 @@ pred <- pred %>%
     q10 = quantile(draw, 0.10),
     q90 = quantile(draw, 0.90)
   )
+write_csv(pred, file = )
 plt <- ggplot(data = pred, aes(x = prev_rep_share, y = q50)) +
   geom_line() +
   geom_point(aes(x = prev_rep_share, y = q50), size = 0.5, data = state_error) +

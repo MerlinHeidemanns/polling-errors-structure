@@ -1,9 +1,13 @@
+###############################################################################
+## Undecided voters
+###############################################################################
 ## Libraries
 library(cmdstanr)
 library(tidyverse)
 library(boot)
 library(rstanarm)
 library(posterior)
+###############################################################################
 ## Load data
 results <- read_csv("dta/potus_results_76_20.csv") %>%
   mutate(dem_share = dem/(dem + rep)) %>%
@@ -38,7 +42,7 @@ fit <- read_rds("dta/model_output/polling_error_pres.RDS")
 results <- read_csv("dta/potus_results_76_20.csv") %>%
   mutate(dem_share = dem/(dem + rep)) %>%
   select(year, state_po, dem_share)
-df_exit <- read_csv("dta/clean_data/exit_polls_late_deciders_three_weeks_less.csv")
+#df_exit <- read_csv("dta/clean_data/exit_polls_late_deciders_three_weeks_less.csv")
 ## Polling error against observed outcome
 state_error <- fit$draws("mu_matrix") %>%
   as_draws_df() %>%
@@ -107,6 +111,11 @@ pred <- pred %>%
   )
 
 
+house_error <- read_csv(
+  file = "dta/model_output/measurement_error/house_races_yhat_epsilon.Rds")
+
+write_csv(house_error, file = "dta/model_output/measurement_error/distribution_late_deciders_errors.csv")
+write_csv(pred, file = "dta/model_output/measurement_error/distribution_late_deciders.csv")
 ggplot(data = pred, aes(x = previous_rep_share, y = q50)) +
   geom_line() +
   geom_ribbon(aes(ymin = q25, ymax = q75), alpha = 0.3) +
@@ -119,7 +128,7 @@ ggplot(data = pred, aes(x = previous_rep_share, y = q50)) +
                                         "More Republican"),
                       diff = NA) %>%
                filter(!is.na(to_local)),
-             size = 2) +
+             size = 5) +
   scale_colour_manual(values = c("More Democratic" = "blue",
                                  "More Republican" = "red")) +
   facet_wrap(t ~. ) +
@@ -132,13 +141,13 @@ ggplot(data = pred, aes(x = previous_rep_share, y = q50)) +
        y = "Polling error (%, favors Democrats)"
        ) +
   theme(legend.position = "bottom") +
-  xlim(c(min(state_error$previous_rep_share),max(state_error$previous_rep_share))) +
+  xlim(c(0.3,0.8)) +
   ylim(c(-8, 8))
 
 ####################
 # x = share undecided
 # y = polling error
-ggplot(data = state_error, aes(x = share_undecided, y = q50)) +
+ggplot(data = state_error, aes(x = share_undecided, y = abs(q50))) +
   geom_point(size = 0.8) +
   facet_wrap(t ~.) +
   theme_light() +
