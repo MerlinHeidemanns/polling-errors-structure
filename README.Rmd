@@ -3,3 +3,15 @@ title: "Untitled"
 output: github_document
 ---
 
+We observe a specific data pattern where the size of the polling error depends
+on local partisanship. For example, in two party electoral contests a party will look better in polls relative to its actual standing on the ground. For example, in very conservative states Democrats do better. In very Democratic states, Republicans look better. This results in undue confidence in the accuracy of polls in some areas as mean bias and this effect cancel each other out. It also results in making certain elections look artifically competitive.
+
+## Explanations
+
+### Late-deciders
+
+We can explain this pattern by considering that a share of voters decides late. This introduces error and error for binary outcomes with only an intercept creates a bias toward 50/50. We would expect that this bias reduces toward election day and that pre-election polls relying on respondents recollection would not show this effect. 
+
+In the U.S. comparing three weeks, two weeks, and one week before the election, this reduction cannot be observed. In Canada, relying on post-election survey data the error persists too.
+
+### Inattentive responders
