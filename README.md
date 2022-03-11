@@ -1,2 +1,1 @@
-# Variance of polling errors
 
